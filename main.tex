@@ -1,0 +1,108 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{tabularx} % extra features for tabular environment
+\usepackage{amsmath}  % improve math presentation
+\usepackage{graphicx} % takes care of graphic including machinery
+\usepackage[margin=1in,letterpaper]{geometry} % decreases margins
+\usepackage{cite} % takes care of citations
+\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=blue,        % color of internal links
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue         
+}
+\usepackage{blindtext}
+%++++++++++++++++++++++++++++++++++++++++
+
+\setlength{\parindent}{4em}
+\setlength{\parskip}{1em}
+\begin{document}
+
+\title{CSCI-539 Project 3: Testing the Effects of Pre-filtering on the Learning to Rank Pipeline}
+\author{Jeffery Russell, Bahdah Shin}
+
+\date{\today}
+\maketitle
+
+% \begin{abstract}
+% In this project we ... executive summary
+% \begin{description}
+% \item[Keywords]
+% Information Retrieval, Learning to Rank
+% \end{description}
+
+% \end{abstract}
+\maketitle
+
+\section{Experiment Overview and Design}
+% 2 pages
+
+% Terrier is a open source search engine 
+
+% - talk about pyterrier
+% - talk about how we came up with the idea
+% - talk about the background background as in LTR
+
+
+% include some diagrams
+
+\section{Collections Used}
+% 2 pages
+% Vaswani
+% - doc num: 11429
+
+% - what are they?
+% - why is this good?
+% - how is it processed?
+
+% trec-deep-learning-docs
+% -doc num: 3,213,835
+% -what are they?
+% - why is this good?
+% - how is it processed?
+
+\section{Methodology}
+% 2 pages
+
+% describe algorithms being compared
+
+
+
+\section{Results and Discussion}
+% 3-4 pages
+
+This section goes over the different experiments that we ran and the resulting performance.
+
+\subsection{Experiment 1: Effect on NDCG}
+
+\subsection{Experiment 2: Effect on MAP}
+
+\subsection{Experiment 3: Effect on Execution Time}
+
+In this experiment we aim to quantify how varying K affects how fast retrieval will be.
+It is expected that as we increase K, our execution time will increase because our ML ranking algorithm will have to re-rank more documents.
+
+To measure this we will be using Python's datetime library where we measure the time it takes evaluate the entire test collection against our labeled data using our LTR pipeline.
+Although this does not measure the time it takes to rank a single query, the relationship with K is still applicable.
+
+
+
+
+\section{Conclusion}
+
+Running empirical studies is essential in CS when determining optimal hyperparameter to use in a system.
+Although it is easy to pick the default values given by a system, it is important to run mini experiments and find the optimal parameters to use in your environment.
+In this paper we explored two critical parameters when implementing LTR in practice: choice of k and top-k selection algorithm.
+We found that there was a sweet spot when selecting a value for K.
+If you choose a value that is too high, it is computationally expensive, however, if you choose a value that is too low, your average performance in terms of MAP and NDCG will suffer.
+
+
+\newpage
+
+\bibliographystyle{plain}
+\bibliography{ref}
+https://arxiv.org/pdf/2003.07820.pdf
+
+\end{document}
+
